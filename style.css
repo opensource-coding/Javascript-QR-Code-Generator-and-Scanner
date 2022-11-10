@@ -1,0 +1,327 @@
+:root {
+  --primary-clr: #514ca1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 900px;
+  min-height: 450px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  background-color: #fff;
+  border: 1px solid var(--primary-clr);
+}
+.container .left {
+  width: 50%;
+  height: 100%;
+}
+.left form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.left form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: var(--primary-clr);
+}
+.left form label i {
+  font-size: 15px;
+  margin-right: 5px;
+}
+.left form #text {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  font-weight: 500;
+  border: 1px solid transparent;
+  background-color: #f5f5f5;
+}
+.left form #text::placeholder {
+  font-style: italic;
+  color: #a5a5a5;
+}
+.left form #text:focus {
+  border-color: var(--primary-clr);
+}
+.colors-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.heading {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #a5a5a5;
+  margin-bottom: 5px;
+}
+.custom-picker {
+  min-width: 80px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 10px;
+  padding: 0 5px;
+  background-color: #f5f5f5;
+}
+.custom-picker span {
+  display: block;
+  min-width: 20px;
+  height: 20px;
+  background-color: red;
+}
+.foreground .custom-picker span {
+  background-color: #5a4ca1;
+}
+.background .custom-picker span {
+  background-color: #fff;
+}
+.corner .custom-picker span {
+  background-color: #000;
+}
+.custom-picker input[type="text"] {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 70px;
+  padding: 0;
+  background-color: transparent;
+  pointer-events: none;
+  border: none;
+  outline: none;
+}
+.custom-picker input[type="color"] {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.types-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.custom-dropdown {
+  position: relative;
+  width: max-content;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 15px;
+  font-size: 12px;
+  text-transform: capitalize;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+.custom-dropdown:hover i {
+  transform: rotate(180deg);
+}
+.custom-dropdown:hover .options {
+  display: flex;
+}
+.custom-dropdown .options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 150px;
+  display: none;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.custom-dropdown .options .option {
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.custom-dropdown .options .option:hover {
+  background-color: #f5f5f5;
+}
+.custom-dropdown .options .option.active {
+  color: #fff;
+  background-color: var(--primary-clr);
+}
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  object-fit: cover;
+}
+.logos input {
+  display: none;
+}
+.logos input:checked ~ img,
+.logos input:checked ~ div {
+  outline: 2px solid #fff;
+  box-shadow: 0 0 0 3px var(--primary-clr);
+}
+.logo .upload-img {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px dashed #a5a5a5;
+}
+.logo .upload-img img {
+  position: absolute;
+}
+.custom-slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #a5a5a5;
+  text-transform: capitalize;
+}
+.custom-slider .slider {
+  position: relative;
+  flex: 1;
+}
+
+.custom-slider .slider span {
+  width: max-content;
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 5px;
+  color: #a5a5a5;
+  position: absolute;
+  top: -2.5em;
+  left: 50%;
+  background-color: #fff;
+  box-shadow: 0 3px 2px #ddd;
+}
+.custom-slider .slider input {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 10px;
+  background-color: var(--primary-clr);
+  outline: none;
+  -webkit-appearance: none;
+}
+.custom-slider .slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-clr);
+  cursor: pointer;
+}
+.custom-slider .slider input::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-clr);
+  cursor: pointer;
+}
+
+.container .right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.right button {
+  width: 70%;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--primary-clr);
+}
+.qr-code {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* qr code will be in canvas */
+.qr-code canvas {
+  width: 200px;
+  height: 200px;
+}
+.download {
+  margin-top: 10px;
+}
+.download p {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: var(--primary-clr);
+  text-transform: uppercase;
+}
+.download-btns {
+  display: flex;
+  gap: 10px;
+}
+.download-btns button {
+  width: 70px;
+  height: 40px;
+  border: 2px solid var(--primary-clr);
+  color: var(--primary-clr);
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .left {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .container .right {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .qr-code {
+    margin-top: 20px;
+  }
+  .qr-code canvas {
+    width: 15px;
+    height: 15px;
+  }
+}
